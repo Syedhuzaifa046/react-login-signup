@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Data() {
+
   const [data, setData] = useState();
 
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
-        console.log("dhhhhhh", res.data);
+        // console.log("dhhhhhh", res.data);
         setData(res.data);
       })
       .catch((error) => {
